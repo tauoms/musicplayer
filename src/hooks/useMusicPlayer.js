@@ -37,8 +37,10 @@ const useMusicPlayer = () => {
     // Function 4: playPreviousTrack
     const playPreviousTrack = () => {
         let newIndex = null;
-        state.currentTrackIndex === state.tracks.length -1 ? (newIndex = state.tracks.length -1) : (newIndex = state.currentTrackIndex - 1);
-        playTrack(newIndex)
+        state.currentTrackIndex === 0 ? (newIndex = state.currentTrackIndex) : (newIndex = state.currentTrackIndex - 1);
+        if (newIndex !== state.currentTrackIndex) {
+            playTrack(newIndex)
+        }
     }
 
     return {
