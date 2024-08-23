@@ -1,4 +1,6 @@
 import { useMusicPlayer } from "../hooks/useMusicPlayer";
+import PlayArrow from "@mui/icons-material/PlayArrow";
+import Pause from "@mui/icons-material/Pause";
 
 const PlayerControls = () => {
   const music = useMusicPlayer();
@@ -10,7 +12,7 @@ const PlayerControls = () => {
       </div>
       <button onClick={music.playPreviousTrack}>Previous</button>
       <button onClick={music.togglePlay}>
-        {music.isPlaying ? "Pause" : "Play"}
+        {music.isPlaying ? <Pause /> : <PlayArrow />}
       </button>
       <button onClick={music.playNextTrack}>Next</button>
     </>
